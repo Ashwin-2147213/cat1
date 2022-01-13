@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="company">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="employee" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="emp_id" type="xs:string"></xs:element>
+                            <xs:element name="emp_name" type="xs:string"></xs:element>
+                            <xs:element name="age" type="xs:integer"></xs:element>
+                            <xs:element name="salary" type="xs:integer"></xs:element>
+                            <xs:element name="emailid" type="xs:string"></xs:element>
+                            <xs:element name="phoneno" type="xs:integer"></xs:element>
+                            <xs:element name="designation" type="xs:string"></xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="emp_id">
+        <xs:simpleType>
+            <xs:restriction base="xs:integer">
+                <xs:minInclusive value="1"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    
+    <xs:element name="age">
+        <xs:simpleType>
+            <xs:restriction base="xs:integer">
+                <xs:minInclusive value="21"/>
+                <xs:maxInclusive value="65"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="salary">
+        <xs:simpleType>
+            <xs:restriction base="xs:integer">
+                <xs:minInclusive value="50000"/>
+                <xs:maxInclusive value="200000"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    
+</xs:schema>
